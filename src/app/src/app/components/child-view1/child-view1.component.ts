@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GenericService } from '../../services/generic.service';
 
 @Component({
   selector: 'app-child-view1',
@@ -8,9 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ChildView1Component implements OnInit {
   @Input() name: string | undefined;
 
-  constructor() { }
+  constructor(private genericService: GenericService) { }
 
   ngOnInit(): void {
+  }
+
+  doAlert() {
+    this.genericService.alert('fired from Anna');
   }
 
 }

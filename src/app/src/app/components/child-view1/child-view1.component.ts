@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child-view1',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./child-view1.component.css']
 })
 export class ChildView1Component implements OnInit {
+  @Input() name: string | undefined;
 
   constructor() { }
 

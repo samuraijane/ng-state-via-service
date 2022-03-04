@@ -14,8 +14,8 @@ export class GenericService {
     alert(message);
   }
 
-  public broadcastNameChange() {
-    this.subject.next();
+  public broadcastNameChange(message: string) {
+    this.subject.next(message);
   }
 
   public receiveNameChange() {

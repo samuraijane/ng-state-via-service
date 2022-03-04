@@ -11,7 +11,8 @@ export class ChildView1Component implements OnInit {
 
   constructor(private genericService: GenericService) {
     genericService.receiveNameChange().subscribe(result => {
-      console.log('Broadcasting and receiving has occurred.');
+      console.log('Changing name to', result);
+      this.name = result;
     })
   }
 
@@ -23,7 +24,7 @@ export class ChildView1Component implements OnInit {
   }
 
   broadcastNameChange() {
-    this.genericService.broadcastNameChange();
+    this.genericService.broadcastNameChange('Eunice');
   }
 
 }

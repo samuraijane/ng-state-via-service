@@ -9,13 +9,21 @@ import { GenericService } from '../../services/generic.service';
 export class ChildView1Component implements OnInit {
   @Input() name: string | undefined;
 
-  constructor(private genericService: GenericService) { }
+  constructor(private genericService: GenericService) {
+    genericService.receiveNameChange().subscribe(result => {
+      console.log('Broadcasting and receiving has occurred.');
+    })
+  }
 
   ngOnInit(): void {
   }
 
   doAlert() {
     this.genericService.alert('fired from Anna');
+  }
+
+  broadcastNameChange() {
+    this.genericService.broadcastNameChange();
   }
 
 }

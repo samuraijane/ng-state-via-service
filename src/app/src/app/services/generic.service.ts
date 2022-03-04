@@ -14,4 +14,12 @@ export class GenericService {
     alert(message);
   }
 
+  public broadcastNameChange() {
+    this.subject.next();
+  }
+
+  public receiveNameChange() {
+    return this.subject.asObservable();
+  }
+
 }

@@ -1,0 +1,11 @@
+.child-view__male {
+  align-items: center;
+  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+code {
+  margin: 10px 0;
+}

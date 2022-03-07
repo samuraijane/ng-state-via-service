@@ -1,0 +1,15 @@
+.child-view__female {
+  align-items: center;
+  background-color: rosybrown;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+code {
+  margin: 10px 0;
+}
+
+label {
+  margin-right: 10px;
+}

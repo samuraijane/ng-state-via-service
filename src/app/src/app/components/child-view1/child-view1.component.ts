@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from  '@angular/forms';
 import { GenericService } from '../../services/generic.service';
+import { Gender } from '../../interface';
 
 @Component({
   selector: 'app-child-view1',
@@ -7,24 +9,32 @@ import { GenericService } from '../../services/generic.service';
   styleUrls: ['./child-view1.component.css']
 })
 export class ChildView1Component implements OnInit {
-  @Input() name: string | undefined;
+  names: Gender = {
+    female: '',
+    male: ''
+  }
 
-  constructor(private genericService: GenericService) {
+  contactForm: FormGroup;
+  constructor(private genericService: GenericService, private formBuilder: FormBuilder) {
+    this.createContactForm();
     genericService.receiveNameChange().subscribe(result => {
-      console.log('Changing name to', result);
-      this.name = result;
-    })
+      this.names = result;
+    });
+  }
+
+  createContactForm(){
+    this.contactForm = this.formBuilder.group({
+      newFemaleName: ['']
+    });
   }
 
   ngOnInit(): void {
   }
 
-  doAlert() {
-    this.genericService.alert('fired from Anna');
-  }
-
-  broadcastNameChange() {
-    this.genericService.broadcastNameChange('Eunice');
+  broadcastNameChange(isFemale: boolean) {
+    const name = this.contactForm.value.newFemaleName;
+    this.genericService.broadcastNameChange(name, isFemale);
+    this.contactForm.controls.newFemaleName.setValue('');
   }
 
 }

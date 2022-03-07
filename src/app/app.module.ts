@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { GenericService } from './src/app/services/generic.service';
@@ -15,7 +16,9 @@ import { ChildView2Component } from './src/app/components/child-view2/child-view
     ChildView2Component
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [GenericService],
   bootstrap: [AppComponent]

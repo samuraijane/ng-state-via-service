@@ -1,5 +1,10 @@
 <div>
-  <p>main-view works!</p>
-  <app-child-view1 [name]="female"></app-child-view1>
-  <app-child-view2 [name]="male"></app-child-view2>
+  <div class="view view--main">
+    <h1>Main View</h1>
+    <p><strong>{{names.female}}</strong> is a female name and <strong>{{names.male}}</strong> is a male name.</p>
+  </div>
+  <div class="view view--child">
+    <div class="view__child"><app-child-view1></app-child-view1></div>
+    <div class="view__child"><app-child-view2></app-child-view2></div>
+  </div>
 </div>

@@ -1,3 +1,9 @@
-<p>child-view1 works! {{name}}</p>
-<button (click)="doAlert()">Click me</button>
-<button (click)="broadcastNameChange()">Update name</button>
+<div class="child-view__female">
+  <h2>Female Child --> {{names.female}}</h2>
+  <p>Current state is <code>{{names.female}} / {{names.male}}</code></p>
+  <form [formGroup]="contactForm" (ngSubmit)="broadcastNameChange(true)">
+    <label for="newFemaleName">Enter a new female name</label>
+    <input id="newFemaleName" formControlName="newFemaleName" />
+    <button type="submit">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,20 @@
+.view {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.view--main {
+  background-color: cornsilk;
+}
+
+.view--child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.view__child {
+  flex: 1 0 auto;
+}
